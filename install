@@ -16,4 +16,8 @@ for dotfile in `ls -A $src/dotfiles`; do
   ln -s "$src/dotfiles/$dotfile" "$HOME/$dotfile"
 done
 
+if [ ! -f "$HOME/.gitconfig.local" ]; then
+  touch "$HOME/.gitconfig.local"
+fi
+
 echo Dotfiles have been installed, you should now restart your bash.
