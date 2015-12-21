@@ -1,0 +1,19 @@
+#!/bin/bash
+
+now=$(date +%Y%m%d%H%M%S)
+src=$(dirname $(readlink -f $0))
+
+for dotfile in `ls -A $src/dotfiles`; do
+  echo "Linking $dotfile ..."
+
+  if [ -f "$HOME/$dotfile" ]; then
+    echo "$HOME/$dotfile already exists, let's backup it !"
+
+    mkdir -p "$HOME/.dotfiles_backup/$now"
+    mv "$HOME/$dotfile" "$HOME/.dotfiles_backup/$now/$dotfile"
+  fi
+
+  ln -s "$src/dotfiles/$dotfile" "$HOME/$dotfile"
+done
+
+echo Dotfiles have been installed, you should now restart your bash.
