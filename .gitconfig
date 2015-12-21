@@ -1,0 +1,11 @@
+[alias]
+    b = branch -vv
+[core]
+    excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
+[push]
+    default = simple
+[help]
+    autocorrect = 1
+[include]
+    path = ~/.gitconfig.local
