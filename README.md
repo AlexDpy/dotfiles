@@ -1,4 +1,4 @@
-These dotfiles work fine on Linut Mint.
+These dotfiles work fine on Linux Mint.
 
 * Clone this repo
 * Run the `install`
