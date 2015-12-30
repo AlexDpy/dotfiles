@@ -1,6 +1,14 @@
 [alias]
     b = branch -vv
+    c = commit
+    co = checkout
+    f = fetch
+    l = log --oneline --graph
+    s = status
+    ss = status -s
+    tls = tag -l --sort version:refname
 [core]
+    autocrlf = input
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
 [push]
