@@ -15,6 +15,7 @@
     gpgSign = true
 [push]
     default = simple
+    gpgSign = if-asked
 [help]
     autocorrect = 1
 [include]
