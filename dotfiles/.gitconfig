@@ -11,6 +11,8 @@
     autocrlf = input
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
+[commit]
+    gpgSign = true
 [push]
     default = simple
 [help]
