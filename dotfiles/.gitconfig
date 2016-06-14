@@ -16,6 +16,8 @@
 [push]
     default = simple
     gpgSign = if-asked
+[rerere]
+    enabled = true
 [help]
     autocorrect = 1
 [include]
