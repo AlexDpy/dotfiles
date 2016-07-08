@@ -1,5 +1,25 @@
 #!/bin/bash
 
 composer() {
-    mkdir -p ~/.composer && docker run --rm -u `stat -c %u $(pwd)`:`stat -c %g $(pwd)` -v $(pwd):/app -v ~/.composer:/composer -v ~/.ssh:/root/.ssh composer/composer $1
+    mkdir -p ~/.composer && docker run -it --rm -u `stat -c %u $(pwd)`:`stat -c %g $(pwd)` -v $(pwd):/app -v ~/.composer:/composer -v ~/.ssh:/root/.ssh composer/composer $@
+}
+
+php56() {
+    args=$@
+
+    if [ $# -eq 0 ]; then
+        args="-a"
+    fi
+
+    docker run -it --rm -u `stat -c %u $(pwd)`:`stat -c %g $(pwd)` -v $(pwd):/app alexdpy/php:5.6 php $args
+}
+
+php70() {
+    args=$@
+
+    if [ $# -eq 0 ]; then
+        args="-a"
+    fi
+
+    docker run -it --rm -u `stat -c %u $(pwd)`:`stat -c %g $(pwd)` -v $(pwd):/app alexdpy/php:7.0 php $args
 }
