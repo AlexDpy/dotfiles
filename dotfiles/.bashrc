@@ -11,6 +11,10 @@ if [ -f "$HOME/.bash_functions" ]; then
     . "$HOME/.bash_functions"
 fi
 
+if [ -f "$HOME/.bash_functions_docker" ]; then
+    . "$HOME/.bash_functions_docker"
+fi
+
 if [ -f "$HOME/.bash_aliases" ]; then
     . "$HOME/.bash_aliases"
 fi

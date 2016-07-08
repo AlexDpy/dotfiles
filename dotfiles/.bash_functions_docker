@@ -1,0 +1,5 @@
+#!/bin/bash
+
+composer() {
+    mkdir -p ~/.composer && docker run --rm -u `stat -c %u $(pwd)`:`stat -c %g $(pwd)` -v $(pwd):/app -v ~/.composer:/composer -v ~/.ssh:/root/.ssh composer/composer $1
+}
