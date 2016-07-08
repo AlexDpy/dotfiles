@@ -14,3 +14,5 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
+alias xclip='xclip -selection c'
+
