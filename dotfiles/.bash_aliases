@@ -16,3 +16,4 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 alias xclip='xclip -selection c'
 
+alias http='docker run -it --rm --net=host jess/httpie'
