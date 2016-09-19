@@ -16,4 +16,7 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 alias xclip='xclip -selection c'
 
-alias http='docker run -it --rm --net=host jess/httpie'
+alias http='docker run -it --rm --net=host jess/httpie -p HBhb'
+alias httpdump='docker run -it --rm --net=host -v /tmp:/tmp jess/httpie -d -o /tmp/dump.html -p HBhb'
+
+alias ungit='docker run -it --rm -p 8448:8448 -v $PWD:/var/www -v ~/.ssh:/root/.ssh -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent reinblau/ungit'
