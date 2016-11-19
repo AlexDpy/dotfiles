@@ -16,6 +16,12 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 alias xclip='xclip -selection c'
 
+alias d=docker
+alias dc=docker-compose
+
+alias g=git
+alias gs='git s'
+
 alias http='docker run -it --rm --net=host jess/httpie -p HBhb'
 alias httpdump='docker run -it --rm --net=host -v /tmp:/tmp jess/httpie -d -o /tmp/dump.html -p HBhb'
 
