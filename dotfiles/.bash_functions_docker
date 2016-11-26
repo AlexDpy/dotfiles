@@ -23,3 +23,14 @@ php70() {
 
     docker run -it --rm -u `stat -c %u $(pwd)`:`stat -c %g $(pwd)` -v $(pwd):/app alexdpy/php:7.0 php $args
 }
+
+php71() {
+    args=$@
+
+    if [ $# -eq 0 ]; then
+        args="-a"
+    fi
+
+    docker run -it --rm -u `stat -c %u $(pwd)`:`stat -c %g $(pwd)` -v $(pwd):/app alexdpy/php:7.1 php $args
+}
+
