@@ -22,7 +22,7 @@ alias dc=docker-compose
 alias g=git
 alias gs='git s'
 
-alias http='docker run -it --rm --net=host jess/httpie -p HBhb'
-alias httpdump='docker run -it --rm --net=host -v /tmp:/tmp jess/httpie -d -o /tmp/dump.html -p HBhb'
+alias http='docker run -it --rm --net=host -v /tmp:/tmp -v $(pwd):/shared:ro jess/httpie -p HBhb'
+alias httpdump='docker run -it --rm --net=host -v /tmp:/tmp -v $(pwd):/shared:ro jess/httpie -d -o /tmp/dump.html -p HBhb'
 
 alias ungit='docker run -it --rm -p 8448:8448 -v $PWD:/var/www -v /etc/ssh/ssh_config:/etc/ssh/ssh_config -v ~/.ssh:/home/ungit/.ssh -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent alexdpy/ungit'
