@@ -4,6 +4,10 @@ composer() {
     mkdir -p ~/.composer && docker run -it --rm -u `stat -c %u $(pwd)`:`stat -c %g $(pwd)` -v $(pwd):/app -v ~/.composer:/composer -v ~/.ssh:/root/.ssh composer/composer $@
 }
 
+composer_ssh() {
+    mkdir -p ~/.composer && docker run -it --rm -u `stat -c %u $(pwd)`:`stat -c %g $(pwd)` -v $(pwd):/app -v ~/.composer:/composer -v ~/.ssh:/root/.ssh -v $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent composer/composer $@
+}
+
 php56() {
     args=$@
 
@@ -33,4 +37,3 @@ php71() {
 
     docker run -it --rm -u `stat -c %u $(pwd)`:`stat -c %g $(pwd)` -v $(pwd):/app alexdpy/php:7.1 php $args
 }
-
