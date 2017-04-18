@@ -1,5 +1,5 @@
 [alias]
-    b = branch -vv
+    b = branch -vv --sort=committerdate
     c = commit
     co = checkout
     f = fetch
