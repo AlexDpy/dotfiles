@@ -1,7 +1,21 @@
 #!/bin/bash
 
-composer() {
-    mkdir -p ~/.composer && docker run -it --rm -u `stat -c %u $(pwd)`:`stat -c %g $(pwd)` -v $(pwd):/app -v ~/.composer:/composer -v ~/.ssh:/root/.ssh composer/composer $@
+composer () {
+    mkdir -p ~/.composer
+    tty=
+    tty -s && tty=--tty
+    docker run \
+        $tty \
+        --interactive \
+        --rm \
+        --user $(id -u):$(id -g) \
+        --volume $SSH_AUTH_SOCK:/ssh-auth.sock \
+        --env SSH_AUTH_SOCK=/ssh-auth.sock \
+        --volume /etc/passwd:/etc/passwd:ro \
+        --volume /etc/group:/etc/group:ro \
+        --volume $(pwd):/app \
+        --volume ~/.composer:/composer \
+        alexdpy/composer "$@"
 }
 
 composer_ssh() {
