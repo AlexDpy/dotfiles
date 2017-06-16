@@ -1,6 +1,7 @@
 [alias]
     b = branch -vv --sort=committerdate
     c = commit
+    cam = commit --amend
     co = checkout
     f = fetch
     l = log --oneline --graph
