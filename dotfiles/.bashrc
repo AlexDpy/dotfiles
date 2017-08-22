@@ -1,3 +1,13 @@
+if ! shopt -oq posix; then
+  if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
+  elif [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
 if [ -f /usr/local/git/contrib/completion/git-prompt.sh ]; then
     . /usr/local/git/contrib/completion/git-prompt.sh
 elif [ -f /usr/lib/git-core/git-sh-prompt ]; then
