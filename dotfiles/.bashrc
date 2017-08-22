@@ -1,4 +1,8 @@
-. /usr/lib/git-core/git-sh-prompt
+if [ -f /usr/local/git/contrib/completion/git-prompt.sh ]; then
+    . /usr/local/git/contrib/completion/git-prompt.sh
+elif [ -f /usr/lib/git-core/git-sh-prompt ]; then
+    . /usr/lib/git-core/git-sh-prompt
+fi
 
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
