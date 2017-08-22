@@ -4,10 +4,10 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias ls='ls --color=auto'
+alias ls='ls -G'
 alias grep='grep --color=auto'
 
-alias ll='ls -AFl --group-directories-first'
+alias ll='ls -AFl'
 
 # beautiful `cat` (requires `sudo apt-get install python-pygments`)
 alias c='pygmentize -O style=monokai -f console256 -g'

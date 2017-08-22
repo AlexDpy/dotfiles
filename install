@@ -1,7 +1,13 @@
 #!/bin/bash
 
+set -e
+
+realpath() {
+    [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+}
+
 now=$(date +%Y%m%d%H%M%S)
-src=$(dirname $(readlink -f $0))
+src=$(dirname $(realpath "$0"))
 
 for dotfile in `ls -A $src/dotfiles`; do
   echo "Linking $dotfile ..."
