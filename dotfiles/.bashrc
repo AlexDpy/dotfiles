@@ -25,6 +25,13 @@ PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\
 
 export EDITOR=nano
 
+shopt -s histappend
+shopt -s histverify
+HISTTIMEFORMAT="[%a, %d %b %Y %H:%M:%S %z] "
+HISTCONTROL="ignoredups"
+HISTSIZE=10000
+HISTFILESIZE=100000
+
 source <(kubectl completion bash)
 
 if [ -f "$HOME/.bash_functions" ]; then
