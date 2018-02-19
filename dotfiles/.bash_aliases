@@ -29,4 +29,6 @@ alias ungit='docker run -it --rm -p 8448:8448 -v $PWD:/var/www -v /etc/ssh/ssh_c
 
 alias ctop='docker run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest'
 
-alias k=kubectl
+alias k='kubectl'
+
+alias blackfire='docker run -it --rm -e BLACKFIRE_CLIENT_ID -e BLACKFIRE_CLIENT_TOKEN blackfire/blackfire blackfire'
