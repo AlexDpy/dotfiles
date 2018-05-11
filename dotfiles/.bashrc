@@ -50,6 +50,8 @@ if [ -f "$HOME/.bashrc.local" ]; then
     . "$HOME/.bashrc.local"
 fi
 
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
 # Automatically add completion for all aliases to commands having completion functions
 function alias_completion {
     local namespace="alias_completion"
@@ -118,4 +120,3 @@ function alias_completion {
     done < <(alias -p | sed -Ene "s/$alias_regex/\1 '\2' '\3'/p")
     source "$tmp_file" && rm -f "$tmp_file"
 }; alias_completion
-
